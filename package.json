@@ -1,0 +1,23 @@
+{
+  "name": "Thegrid",
+  "version": "1.0.0",
+  "description": "CSS grid system",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "adsf"
+  },
+  "author": "'Viktor <'vstarynsky@gmail.com'>",
+  "license": "MIT"
+}

@@ -1,0 +1,20 @@
+@mixin tg_breakpoint( $point, $type: min ) {
+	@media (#{$type}-width: $point + px) { @content }
+}
+
+@mixin tg_box-sizing($boxmodel) {
+	-webkit-box-sizing: $boxmodel;
+	   -moz-box-sizing: $boxmodel;
+			box-sizing: $boxmodel;
+}
+
+@mixin tg_clearfix() {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}

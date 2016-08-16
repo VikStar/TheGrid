@@ -1,0 +1,71 @@
+@mixin tg_container-fluid() {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left:  floor( $gutter / 2 ) + px;
+	padding-right: ceil( $gutter / 2 ) + px;
+	@include tg_clearfix;
+}
+
+@mixin tg_row() {
+	margin-left:  ceil( $gutter / -2 ) + px;
+	margin-right: floor( $gutter / -2 ) + px;
+	@include tg_clearfix;
+}
+
+@mixin tg_col() {
+	position: relative;
+	float: left;
+	min-height: 1px;
+	width: 100%;
+	padding-left:  floor( $gutter / 2 ) + px;
+	padding-right: ceil( $gutter / 2 ) + px;
+}
+
+
+@mixin tg_col-width( $class ) {
+	@for $i from 1 through $columns {
+		.w#{$class}-#{$i} {
+			width: percentage( $i / $columns );
+		}
+	}
+}
+
+@mixin tg_col-offset( $class ) {
+	@for $i from 0 through $columns {
+		.w#{$class}-offset-#{$i} {
+			margin-left: percentage( $i / $columns );
+		}
+	}
+}
+
+@mixin tg_col-push( $class ) {
+	.w#{$class}-push-0 {
+		left: auto;
+	}
+	
+	@for $i from 1 through $columns {
+		.w#{$class}-push-#{$i} {
+			left: percentage( $i / $columns );
+		}
+	}
+}
+
+@mixin tg_col-pull( $class ) {
+	.w#{$class}-pull-0 {
+		right: auto;
+	}
+	
+	@for $i from 1 through $columns {
+		.w#{$class}-pull-#{$i} {
+			right: percentage( $i / $columns );
+		}
+	}
+}
+
+
+@mixin tg_grid( $class ) {
+	@include tg_col-width( $class );
+	@include tg_col-offset( $class );
+	@include tg_col-push( $class );
+	@include tg_col-pull( $class );
+}

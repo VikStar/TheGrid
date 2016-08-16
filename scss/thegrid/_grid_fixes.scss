@@ -1,0 +1,5 @@
+*,
+*:before,
+*:after {
+	@include tg_box-sizing(border-box);
+}

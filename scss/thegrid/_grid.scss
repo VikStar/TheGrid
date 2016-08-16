@@ -1,0 +1,46 @@
+$columns: 12;
+$gutter: 30;
+
+$w320: 320;
+$w480: 480;
+$w640: 640;
+$w800: 800;
+$w960: 960;
+$w1120: 1120;
+$w1280: 1280;
+
+.container {
+	@include tg_container-fluid;
+
+	@include tg_breakpoint($w480) { width: $w480+px };
+	@include tg_breakpoint($w640) { width: $w640+px };
+	@include tg_breakpoint($w800) { width: $w800+px };
+	@include tg_breakpoint($w960) { width: $w960+px };
+	@include tg_breakpoint($w1120) { width: $w1120+px };
+	@include tg_breakpoint($w1280) { width: $w1280+px };
+}
+
+.container-fluid {
+	@include tg_container-fluid;
+}
+
+.row {
+	@include tg_row;
+}
+
+.col {
+	@include tg_col;
+}
+
+.clearfix {
+	@include tg_clearfix;
+}
+
+@include tg_grid($w320);
+
+@include tg_breakpoint($w480) { @include tg_grid($w480); };
+@include tg_breakpoint($w640) { @include tg_grid($w640); };
+@include tg_breakpoint($w800) { @include tg_grid($w800); };
+@include tg_breakpoint($w960) { @include tg_grid($w960); };
+@include tg_breakpoint($w1120) { @include tg_grid($w1120); };
+@include tg_breakpoint($w1280) { @include tg_grid($w1280); };
